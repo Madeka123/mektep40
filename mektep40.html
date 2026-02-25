@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="kk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>№40 орта мектеп</title>
+    <meta name="description" content="№40 мектептің ресми сайты. ҰБТ, гранттар пәндер туралы ақпарат">
+    <meta name="author" content="Madiyar 40mektep">
+
+    <style>
+        /* --- ТВОЙ ОБНОВЛЕННЫЙ CSS --- */
+        :root {
+            --main-blue: #007BFF;
+            --light-blue: #00A8FF;
+            --bg-color: #f0f8ff;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: var(--bg-color);
+            color: #333;
+            font-family: sans-serif; /* Для основного текста */
+            transition: 0.3s;
+        }
+
+        /* Тёмная тема */
+        body.dark-theme {
+            background-color: #1a1a1a;
+            color: #f0f0f0;
+        }
+
+        header {
+            background: linear-gradient(135deg, var(--main-blue), var(--light-blue));
+            color: white;
+            padding: 40px 20px;
+            text-align: center;
+            font-family: 'Comic Sans MS', cursive; /* Твой любимый шрифт */
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+
+        nav {
+            background-color: white;
+            display: flex;
+            justify-content: center;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        body.dark-theme nav {
+            background-color: #333;
+        }
+
+        nav button {
+            padding: 15px 25px;
+            border: none;
+            background: none;
+            font-size: 16px;
+            font-family: 'Comic Sans MS', cursive;
+            cursor: pointer;
+            font-weight: bold;
+            color: black;
+            transition: 0.3s ease; /* Исправлено: добавлено 's' */
+        }
+
+        body.dark-theme nav button {
+            color: white;
+        }
+
+        nav button:hover {
+            background: #e6f2ff;
+            color: var(--main-blue);
+        }
+
+        nav button.active {
+            border-bottom: 3px solid var(--main-blue);
+            color: var(--main-blue);
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 20px auto;
+            padding: 20px;
+        }
+
+        .section {
+            display: none; /* Скрыто по умолчанию */
+            animation: fadeIn 0.5s ease;
+        }
+
+        .section.active {
+            display: block;
+        }
+
+        .card {
+            background: white;
+            padding: 25px;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            margin-top: 20px;
+        }
+
+        body.dark-theme .card {
+            background: #2a2a2a;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+        }
+
+        iframe {
+            width: 100%;
+            height: 350px;
+            border-radius: 10px;
+            border: 0;
+            margin-top: 15px;
+        }
+
+        .contact-btn {
+            background-color: var(--main-blue);
+            color: white;
+            padding: 12px 25px;
+            border: none;
+            border-radius: 25px;
+            font-weight: bold;
+            cursor: pointer;
+            font-size: 16px;
+            transition: 0.3s;
+        }
+
+        .contact-btn:hover {
+            transform: scale(1.05);
+            background-color: #0056b3;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Кнопка Темы */
+        .theme-toggle {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: rgba(255,255,255,0.2);
+            border: 1px solid white;
+            color: white;
+            padding: 5px 10px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <button class="theme-toggle" onclick="toggleTheme()">Түн / Күн</button>
+        <h1>№40 орта мектеп</h1>
+        <p>Болашаққа сапар</p>
+    </header>
+
+    <nav>
+        <button class="active" onclick="showSection('home', this)">Мектеп жайлы</button>
+        <button onclick="showSection('history', this)">Ашылған жылы</button>
+        <button onclick="showSection('director', this)">Мектеп директоры</button>
+        <button onclick="showSection('contact', this)">Байланыс</button>
+    </nav>
+
+    <div class="container">
+        <div id="home" class="section active">
+            <div class="card">
+                <h2>Біздің мектепке қош келдіңіз!</h2>
+                <p>Мектепте көптеген іс-шаралар, үйірмелер және қызықты сабақтар өтеді.</p>
+                <h3>Біздің мекен-жайымыз</h3>
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2503.743232145621!2d71.4304!3d51.1282!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNTHCsDA3JzQxLjUiTiA3McKwMjUnNDkuNCJF!5e0!3m2!1sru!2skz!4v1625123456789" allowfullscreen="" loading="lazy"></iframe>
+            </div>
+        </div>
+
+        <div id="history" class="section">
+            <div class="card">
+                <h2>Мектеп тарихы</h2>
+                <p>№40 мектеп өз есігін алғаш рет ашқан күннен бастап мыңдаған түлектерді ұядан ұшырды.</p>
+                <p>Ашылған жылы: <strong>19XX жыл</strong></p>
+            </div>
+        </div>
+
+        <div id="director" class="section">
+            <div class="card" style="text-align: center;">
+                <h2>Салтанат Тарасовна</h2>
+                <p>№40 орта мектебінің директоры</p>
+                <p><i>"Біздің мақсатымыз - сапалы білім мен саналы тәрбие беру."</i></p>
+            </div>
+        </div>
+
+        <div id="contact" class="section">
+            <div class="card">
+                <h2>Бізбен байланысу</h2>
+                <p>Сұрақтарыңыз болса, төмендегі батырманы басыңыз немесе хабарласыңыз:</p>
+                <p>📞 Тел: +7 (700) 000-00-00</p>
+                <button class="contact-btn" onclick="alert('Жақында жұмыс істейді!')">Хабарлама жіберу</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // --- ТВОЙ ИСПРАВЛЕННЫЙ JAVASCRIPT ---
+
+        function showSection(id, btn) {
+            // Скрываем все секции (используем класс .section)
+            document.querySelectorAll('.section').forEach(s => {
+                s.classList.remove('active');
+            });
+
+            // Убираем активный класс у кнопок навигации
+            document.querySelectorAll('nav button').forEach(b => {
+                b.classList.remove('active');
+            });
+
+            // Показываем нужную секцию
+            const target = document.getElementById(id);
+            if (target) {
+                target.classList.add('active');
+            }
+
+            // Делаем кнопку активной
+            btn.classList.add('active');
+        }
+
+        // Функция переключения темы
+        function toggleTheme() {
+            document.body.classList.toggle('dark-theme');
+        }
+    </script>
+</body>
+</html>
